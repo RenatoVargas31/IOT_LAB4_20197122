@@ -26,23 +26,23 @@ public class AppActivity extends AppCompatActivity {
         binding = ActivityAppBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Configurar la Toolbar
+        // Toolbar
         setSupportActionBar(binding.toolbar);
 
-        // Configurar Navigation Component
+        // Navegación de fragmentos
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         assert navHostFragment != null;
         navController = navHostFragment.getNavController();
 
-        // Configurar los destinos considerados como nivel superior (no mostrarán botón de retroceso)
+        // Configurar los destinos (Cambio dinámico de la Toolbar)
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_location, R.id.navigation_forecast, R.id.navigation_sports)
                 .build();
 
-        // Conectar la toolbar con Navigation Component
+        // Conexión de la toolbar con Navigation Component
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        // Conectar Bottom Navigation con Navigation Component
+        // Conexión del Bottom Navigation con Navigation Component
         NavigationUI.setupWithNavController(binding.bottomNavView, navController);
         binding.bottomNavView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.navigation_location) {
@@ -58,11 +58,11 @@ public class AppActivity extends AppCompatActivity {
 
             return false;
         });
-        // Sobrescribir comportamiento del botón atrás
+        // Configurción del comportmiento del botón de retroceso
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                // Simplemente finaliza la actividad, regresando al MainActivity
+                // Finaliza la actividad, regresando al MainActivity
                 finish();
             }
         });

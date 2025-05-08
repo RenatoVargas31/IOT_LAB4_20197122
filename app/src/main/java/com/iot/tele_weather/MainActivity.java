@@ -29,12 +29,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Verificar conexión a Internet al iniciar la aplicación
-        if (!isConnectedToInternet()) {
-            showNoInternetDialog();
-        }
-
-        // Configurar botón de ingreso
+        // Configurción de Ingreso - Validación de conexión
         binding.btnEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("Configuración", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // Redirigir a los ajustes del dispositivo
+                        // Redirección a "Ajustes"
                         Intent intent = new Intent(Settings.ACTION_SETTINGS);
                         startActivity(intent);
                     }

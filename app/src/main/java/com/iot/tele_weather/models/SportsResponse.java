@@ -28,7 +28,7 @@ public class SportsResponse {
         return golfEvents;
     }
 
-    // Método de ayuda para obtener todos los eventos
+    // Método para obtener todos los eventos
     public List<SportEvent> getAllEvents() {
         List<SportEvent> allEvents = new ArrayList<>();
 

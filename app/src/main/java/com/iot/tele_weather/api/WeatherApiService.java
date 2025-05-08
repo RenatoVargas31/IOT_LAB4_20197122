@@ -11,17 +11,20 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface WeatherApiService {
+    //Consulta para las ubicaciones
     @GET("search.json")
     Call<List<LocationModel>> searchLocations(
             @Query("key") String apiKey,
             @Query("q") String query
     );
+    //Consulta par los pronósticos
     @GET("forecast.json")
     Call<ForecastResponse> getForecast(
             @Query("key") String apiKey,
             @Query("q") String locationQuery,
             @Query("days") int days
     );
+    //Consulta para los deportes
     @GET("sports.json")
     Call<SportsResponse> getSports(
             @Query("key") String apiKey,

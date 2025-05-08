@@ -53,7 +53,6 @@ public class ForecastFragment extends Fragment implements SensorEventListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        // Aquí irá la lógica para mostrar pronósticos y configurar el RecyclerView
         // Configurar RecyclerView
         adapter = new ForecastAdapter();
         binding.rvForecasts.setLayoutManager(new LinearLayoutManager(requireContext()));

@@ -39,7 +39,6 @@ public class LocationFragment extends Fragment implements LocationAdapter.OnLoca
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        // Aquí irá la configuración del RecyclerView y la lógica para llamar a la API
         // Configurar RecyclerView
         adapter = new LocationAdapter((LocationAdapter.OnLocationClickListener) this);
         binding.rvLocations.setLayoutManager(new LinearLayoutManager(requireContext()));

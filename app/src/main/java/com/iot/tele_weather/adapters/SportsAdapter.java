@@ -75,7 +75,7 @@ public class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.SportViewH
             // Mostrar la fecha y hora
             tvDate.setText(sportEvent.getStart());
 
-            // Configurar icono según el tipo de torneo/partido
+            // Configurar icono
             ivSportIcon.setImageResource(R.drawable.ic_football);
         }
     }

@@ -40,7 +40,7 @@ public class SportsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        // Aquí irá la lógica para mostrar eventos deportivos y configurar el RecyclerView
+
         // Inicializar RecyclerView
         adapter = new SportsAdapter();
         binding.rvSports.setLayoutManager(new LinearLayoutManager(requireContext()));
