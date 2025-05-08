@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_location">
+
+    <fragment
+        android:id="@+id/navigation_location"
+        android:name="com.iot.tele_weather.fragments.LocationFragment"
+        android:label="Ubicaciones"
+        tools:layout="@layout/fragment_location">
+        <!-- Acción para navegar al fragmento de pronósticos -->
+        <action
+            android:id="@+id/action_navigation_location_to_navigation_forecast"
+            app:destination="@id/navigation_forecast"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <!-- Argumentos que se pasarán entre fragmentos -->
+            <argument
+                android:name="locationId"
+                app:argType="long" />
+            <argument
+                android:name="locationName"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_forecast"
+        android:name="com.iot.tele_weather.fragments.ForecastFragment"
+        android:label="Pronósticos"
+        tools:layout="@layout/fragment_forecast">
+        <!-- Argumentos que recibirá este fragmento -->
+        <argument
+            android:name="locationId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+        <argument
+            android:name="locationName"
+            app:argType="string"
+            android:defaultValue="Ubicación" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_sports"
+        android:name="com.iot.tele_weather.fragments.SportsFragment"
+        android:label="Deportes"
+        tools:layout="@layout/fragment_sports" />
+
+</navigation>
